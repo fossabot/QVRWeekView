@@ -405,6 +405,30 @@ public extension WeekView {
     }
 
     /**
+     Should time of events be shown.
+     */
+    public var eventShowTimeOfEvent: Bool {
+        get {
+            return TextVariables.eventShowTimeOfEvent
+        }
+        set(showTime) {
+            self.dayScrollView.setEventShowTimeOfEvent(to: showTime)
+        }
+    }
+
+    /**
+     Should all event's data be in one line
+     */
+    public var eventsDataInOneLine: Bool {
+        get {
+            return TextVariables.eventsDataInOneLine
+        }
+        set(dataInOneLine) {
+            self.dayScrollView.setEventsDataInOneLine(to: dataInOneLine)
+        }
+    }
+
+    /**
      The text shown inside the previw event.
      */
     public var previewEventText: String {

@@ -56,6 +56,11 @@ UICollectionViewDelegate, UICollectionViewDataSource, DayViewCellDelegate, Frame
     // Current zoom scale of content
     private var lastTouchZoomScale = CGFloat(1)
 
+    // Fix for full day event after rotation of the device
+    // When device is rotated all day events are moved out of the frame,
+    // since they are build not using autolayout
+    private var screenWidth = CGFloat(0)
+
     // MARK: - CONSTRUCTORS/OVERRIDES -
 
     required init?(coder aDecoder: NSCoder) {
@@ -494,6 +499,11 @@ UICollectionViewDelegate, UICollectionViewDataSource, DayViewCellDelegate, Frame
 
         if let weekView = self.superview?.superview as? WeekView {
             weekView.updateVisibleLabelsAndMainConstraints()
+
+            if screenWidth != frame.width {
+                dayCollectionView.reloadData()
+                screenWidth = frame.width
+            }
         }
     }
 
@@ -627,6 +637,22 @@ extension DayScrollView {
      */
     func setEventLabelHorizontalTextPadding(to padding: CGFloat) {
         TextVariables.eventLabelHorizontalTextPadding = padding
+        updateLayout()
+    }
+
+    /**
+     Sets if time of events should be shown.
+     */
+    func setEventShowTimeOfEvent(to showTime: Bool) {
+        TextVariables.eventShowTimeOfEvent = showTime
+        updateLayout()
+    }
+
+    /**
+     Sets showing all event's data in one line.
+     */
+    func setEventsDataInOneLine(to dataInOneLine: Bool) {
+        TextVariables.eventsDataInOneLine = dataInOneLine
         updateLayout()
     }
 
@@ -1166,5 +1192,9 @@ extension TextVariables {
     fileprivate(set) static var eventLabelHorizontalTextPadding = LayoutDefaults.eventLabelHorizontalTextPadding
     // Vertical padding of text in event labels
     fileprivate(set) static var eventLabelVerticalTextPadding = LayoutDefaults.eventLabelVerticalTextPadding
+    // Showing events' time.
+    fileprivate(set) static var eventShowTimeOfEvent = LayoutDefaults.eventShowTimeOfEvent
+    // Showing all event's data in one line
+    fileprivate(set) static var eventsDataInOneLine = LayoutDefaults.eventsDataInOneLine
 
 }

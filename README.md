@@ -125,6 +125,8 @@ Below is a table of all customizable properties of the `WeekView`
 | eventLabelFont:`UIFont`         | |
 | eventLabelTextColor:`UIColor`         | |
 | eventLabelMinimumFontSize:`CGFloat`         | |
+| eventShowTimeOfEvent:`Bool`               | Should time of events be shown |
+| eventsDataInOneLine:`Bool`               | Compressed in one line all event's data |
 | defaultDayViewColor:`UIColor`         | |
 | weekendDayViewColor:`UIColor`         | |
 | passedDayViewColor:`UIColor`         | |
@@ -159,7 +161,12 @@ WeekView handles all top level operations such as pinch gestures and orientation
 - [x] Extra customization features
 - [x] Improved UI features
 - [x] Increased event processing efficiency
-- [ ] Add scroll to all day events
+- [ ] Add: testing project, where pod can be tested
+- [ ] Clean: remove useless folders and unify the naming across them
+- [ ] Re-write: how all day events are added to the view using autolayout
+- [ ] Add: CI for building/testing
+- [ ] Add: tests
+- [ ] Add: scroll to all day events
 
 ## Author
 
