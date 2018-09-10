@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/QVRWeekView.svg?style=flat)](http://cocoapods.org/pods/QVRWeekView)
 [![License](https://img.shields.io/cocoapods/l/QVRWeekView.svg?style=flat)](http://cocoapods.org/pods/QVRWeekView)
 [![Platform](https://img.shields.io/cocoapods/p/QVRWeekView.svg?style=flat)](http://cocoapods.org/pods/QVRWeekView)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Flesyk%2FQVRWeekView.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Flesyk%2FQVRWeekView?ref=badge_shield)
 
 ## About
 
@@ -177,3 +178,6 @@ Reinert Lemmens, reilemx@gmail.com
 ## License
 
 QVRWeekView is available under the MIT license. See the LICENSE file for more info.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Flesyk%2FQVRWeekView.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Flesyk%2FQVRWeekView?ref=badge_large)
